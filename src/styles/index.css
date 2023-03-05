@@ -1,4 +1,5 @@
 :root {
+    --color-white: hsla(0, 0%, 100%, 1);
     --color-blue: hsla(228, 100%, 66%, 1);
     --color-blue-pale: hsla(228, 100%, 75%, 1);
     --color-red: hsla(0, 83%, 65%, 1);

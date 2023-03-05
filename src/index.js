@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 
+import { Header } from './components/header';
+
 function App() {
-    return null;
+    return (
+        <>
+            <Header />
+        </>
+    );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,12 +22,6 @@ root.render(
 // // // // // // // // // //
 
 // index.js
-// A simple solution to complex tasks is coming soon
-
-// Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new
-// collaboration platform built with an intuitive interface to improve productivity.
-
-// Get Started
 
 // Basic
 // Free
