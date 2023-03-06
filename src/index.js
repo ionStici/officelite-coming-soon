@@ -1,20 +1,66 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, Route } from 'react-router-dom';
+import {
+    RouterProvider,
+    Outlet,
+    Route,
+    createBrowserRouter,
+    createRoutesFromElements,
+} from 'react-router-dom';
+import { createStore } from 'redux';
 import './styles/index.css';
 
 import { Header } from './components/header';
+import { Pricing } from './components/pricing';
+
+// // // // // // // // // //
+
+const initialState = {};
+const reducer = function (state = initialState, action) {
+    switch (action.type) {
+        default:
+            return state;
+    }
+};
+
+const store = createStore(reducer);
+
+// // // // // // // // // //
 
 function Root() {
-    return <Header />;
+    return (
+        <>
+            <Outlet />
+        </>
+    );
 }
 
-const route = function () {};
+function Home() {
+    return (
+        <>
+            <Header />;
+            <Pricing />
+        </>
+    );
+}
+
+function SignUp() {
+    return null;
+}
+
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<Root />}>
+            <Route index element={<Home />} />
+            <Route path="sign-up" element={<SignUp />} />
+        </Route>
+    )
+);
 
 function App() {
     return (
         <>
-            <Header />
+            <RouterProvider router={router} />
         </>
     );
 }

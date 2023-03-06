@@ -2,6 +2,7 @@ import bg from './../assets/home/bg-pattern-header.svg';
 import chart from './../assets/home/illustration-charts.svg';
 import logo from './../assets/shared/logo.svg';
 import styles from './../styles/header.module.scss';
+import { Link } from 'react-router-dom';
 [logo, bg, chart].forEach(img => (new Image().src = img));
 
 export const Header = function () {
@@ -28,13 +29,9 @@ export const Header = function () {
                         platform built with an intuitive interface to improve
                         productivity.
                     </p>
-                    <a
-                        className={styles.link}
-                        href="."
-                        onClick={e => e.preventDefault()}
-                    >
+                    <Link className={styles.link} to="sign-up">
                         Get Started
-                    </a>
+                    </Link>
                 </div>
             </div>
         </header>
