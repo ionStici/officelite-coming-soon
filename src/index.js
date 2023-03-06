@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { RouterProvider, Route } from 'react-router-dom';
 import './styles/index.css';
 
 import { Header } from './components/header';
+
+function Root() {
+    return <Header />;
+}
+
+const route = function () {};
 
 function App() {
     return (

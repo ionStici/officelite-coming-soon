@@ -2,20 +2,31 @@
 
 .header {
     overflow: hidden;
+}
+
+.wrapper {
     position: relative;
     text-align: center;
     margin-bottom: 100px;
 
     @media only screen and (min-width: 768px) {
-        margin-bottom: 140px;
-        padding: 72px 40px 0 39px;
+        padding: 72px 20px 0 39px;
 
         display: grid;
-        grid-template-columns: minmax(345px, 540px) minmax(320px, 500px);
+        align-items: center;
+        grid-template-columns: minmax(345px, 540px) minmax(320px, 600px);
+        column-gap: 30px;
         row-gap: 104px;
-        grid-template-rows: 30px 325px;
+        grid-template-rows: 30px minmax(352px, fit-content);
 
         text-align: left;
+
+        max-width: 1169px;
+        margin: 0 auto 90px auto;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        margin-bottom: 114px;
     }
 }
 
@@ -43,6 +54,7 @@
 
 .logoBox {
     margin: 46px 0 80px 0;
+    display: block;
     // .logo {}
 
     @media only screen and (min-width: 768px) {
@@ -59,8 +71,14 @@
     @media only screen and (min-width: 768px) {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
-        padding-top: 19px;
         text-align: center;
+
+        padding-top: 19px;
+        margin-bottom: 0;
+    }
+
+    @media only screen and (min-width: 900px) {
+        padding-top: 0;
     }
 }
 
@@ -68,6 +86,7 @@
     width: 50%;
 
     @media only screen and (min-width: 768px) {
+        width: 95%;
     }
 }
 
@@ -77,6 +96,7 @@
     padding: 0 24px;
 
     @media only screen and (min-width: 768px) {
+        padding: 0;
         grid-column: 1 / 2;
         grid-row: 2 / 3;
     }
@@ -88,6 +108,11 @@
     font-size: 40px;
     line-height: 48px;
     margin-bottom: 24px;
+
+    @media only screen and (min-width: 1100px) {
+        font-size: 56px;
+        line-height: 64px;
+    }
 }
 
 .p {
@@ -96,6 +121,12 @@
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 24px;
+
+    @media only screen and (min-width: 1100px) {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 32px;
+    }
 }
 
 .link,
@@ -117,6 +148,10 @@
     box-shadow: 0px 25px 25px -10px rgba(63, 91, 194, 0.247159);
     background-color: var(--color-blue);
     transition: background-color 0.15s, transform 0.15s;
+
+    @media only screen and (min-width: 768px) {
+        margin: 0;
+    }
 
     &:hover {
         background-color: var(--color-blue-pale);
