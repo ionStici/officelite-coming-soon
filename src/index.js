@@ -7,23 +7,11 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
 } from 'react-router-dom';
-import { createStore } from 'redux';
-import './styles/index.css';
 
+import './styles/index.css';
 import { Header } from './components/header';
 import { Pricing } from './components/pricing';
-
-// // // // // // // // // //
-
-const initialState = {};
-const reducer = function (state = initialState, action) {
-    switch (action.type) {
-        default:
-            return state;
-    }
-};
-
-const store = createStore(reducer);
+import { Footer } from './components/footer';
 
 // // // // // // // // // //
 
@@ -40,6 +28,7 @@ function Home() {
         <>
             <Header />;
             <Pricing />
+            <Footer />
         </>
     );
 }
@@ -71,20 +60,6 @@ root.render(
         <App />
     </React.StrictMode>
 );
-
-// // // // // // // // // //
-
-// index.js
-
-// <!-- If you're choosing to make this date dynamic, set it to 30 days in the future from the moment the visitor views the page -->
-// Coming 4 Nov 2020
-
-// <!-- If you're choosing to make this timer dynamic, have it countdown from the date you set above -->
-// 47 Days
-// 07 Hours
-// 56 Min
-// 14 Sec
-// Get Started
 
 // // // // // // // // // // // // // // // // // // // //
 
