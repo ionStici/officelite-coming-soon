@@ -2,6 +2,14 @@
 
 .header {
     overflow: hidden;
+
+    max-width: 500px;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 768px) {
+        max-width: revert;
+        margin: revert;
+    }
 }
 
 .wrapper {
@@ -53,7 +61,7 @@
         width: revert;
         height: revert;
         top: -419px;
-        right: -350px;
+        right: -490px;
     }
 }
 
