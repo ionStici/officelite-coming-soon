@@ -2,6 +2,8 @@ import styles from './../styles/footer.module.scss';
 import bgPattern from './../assets/home/bg-pattern-footer.svg';
 import { Link } from 'react-router-dom';
 
+let time = 2_592_000;
+
 export const Footer = function () {
     return (
         <footer className={styles.footer}>
