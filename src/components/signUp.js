@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import styles from './../styles/signUp.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -13,37 +15,179 @@ import iconCross from './../assets/sign-up/icon-cross.svg';
 // // // // // // // // // //
 
 const Form = function (props) {
+    const inputName = useRef(null);
+    const inputEmail = useRef(null);
+    const inputTel = useRef(null);
+    const inputComp = useRef(null);
+
+    const borderRed = { borderBottom: '1px solid var(--color-red)' };
+    const colorRed = { color: 'var(--color-red)' };
+
+    const validName = name => {
+        if (name) return true;
+        if (!name) return false;
+    };
+
+    const validEmail = email => {
+        if (email) return true;
+        if (!email) return false;
+    };
+
+    const validTel = tel => {
+        if (tel) return true;
+        if (!tel) return false;
+    };
+
+    const validComp = comp => {
+        if (comp) return true;
+        if (!comp) return false;
+    };
+
+    const handleSubmit = function (e) {
+        e.preventDefault();
+
+        const name = inputName.current.value;
+        const email = inputEmail.current.value;
+        const tel = inputTel.current.value;
+        const company = inputComp.current.value;
+
+        if (validName(name)) {
+            inputName.current.style.color = 'var(--color-dark-gray)';
+            inputName.current.style.borderBottom =
+                '1px solid var(--color-gray-05)';
+        } else {
+            inputName.current.style.color = 'var(--color-red)';
+            inputName.current.style.borderBottom = '1px solid var(--color-red)';
+        }
+
+        if (validEmail(email)) {
+            inputEmail.current.style.color = 'var(--color-dark-gray)';
+            inputEmail.current.style.borderBottom =
+                '1px solid var(--color-gray-05)';
+        } else {
+            inputEmail.current.style.color = 'var(--color-red)';
+            inputEmail.current.style.borderBottom =
+                '1px solid var(--color-red)';
+        }
+
+        if (validTel(tel)) {
+            inputTel.current.style.color = 'var(--color-dark-gray)';
+            inputTel.current.style.borderBottom =
+                '1px solid var(--color-gray-05)';
+        } else {
+            inputTel.current.style.color = 'var(--color-red)';
+            inputTel.current.style.borderBottom = '1px solid var(--color-red)';
+        }
+
+        if (validComp(company)) {
+            inputComp.current.style.color = 'var(--color-dark-gray)';
+            inputComp.current.style.borderBottom =
+                '1px solid var(--color-gray-05)';
+        } else {
+            inputComp.current.style.color = 'var(--color-red)';
+            inputComp.current.style.borderBottom = '1px solid var(--color-red)';
+        }
+
+        return;
+    };
+
+    const handleDropDown = function () {
+        //
+    };
+
     return (
-        <form className={styles.form}>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email Address" />
+        <form className={styles.form} onSubmit={handleSubmit}>
+            <img
+                className={`${styles.iconCross} ${styles.iconCross_name}`}
+                src={iconCross}
+                alt=""
+            />
+            <img
+                className={`${styles.iconCross} ${styles.iconCross_email}`}
+                src={iconCross}
+                alt=""
+            />
+            <img
+                className={`${styles.iconCross} ${styles.iconCross_tel}`}
+                src={iconCross}
+                alt=""
+            />
+            <img
+                className={`${styles.iconCross} ${styles.iconCross_comp}`}
+                src={iconCross}
+                alt=""
+            />
 
-            <div className={styles.select}>
+            <input
+                className={styles.input}
+                type="text"
+                placeholder="Name"
+                ref={inputName}
+            />
+            <input
+                className={styles.input}
+                type="email"
+                placeholder="Email Address"
+                ref={inputEmail}
+            />
+
+            <div
+                className={`${styles.input} ${styles.select}`}
+                onClick={handleDropDown}
+            >
                 <p>
-                    <span>Basic Pack </span>
-                    <span>Free</span>
+                    <span>Basic Pack</span>
+                    <span className={styles.selectFree}>Free</span>
                 </p>
+                <img src={iconArrowDown} alt="" />
 
-                <ul>
+                <ul className={styles.ul}>
                     <li>
-                        <span>Basic Pack </span>
-                        <span>Free</span>
+                        <span>Basic Pack</span>
+                        <span className={styles.selectFree}>Free</span>
+                        <img
+                            className={styles.iconCheck}
+                            src={iconCheck}
+                            alt=""
+                        />
                     </li>
 
                     <li>
-                        <span>Pro Pack </span>
-                        <span>$9.99</span>
+                        <span>Pro Pack</span>
+                        <span className={styles.selectFree}>$9.99</span>
+                        <img
+                            className={styles.iconCheck}
+                            src={undefined}
+                            alt=""
+                        />
                     </li>
 
                     <li>
-                        <span>Ultimate Pack </span>
-                        <span>$19.99</span>
+                        <span>Ultimate Pack</span>
+                        <span className={styles.selectFree}>$19.99</span>
+                        <img
+                            className={styles.iconCheck}
+                            src={undefined}
+                            alt=""
+                        />
                     </li>
                 </ul>
             </div>
 
-            <input type="tel" placeholder="Phone Number" />
-            <input type="text" placeholder="Company" />
+            <input
+                className={styles.input}
+                type="tel"
+                placeholder="Phone Number"
+                ref={inputTel}
+            />
+
+            <input
+                className={styles.input}
+                type="text"
+                placeholder="Company"
+                ref={inputComp}
+            />
+
             <input
                 className={styles.btn}
                 type="submit"

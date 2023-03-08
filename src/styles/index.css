@@ -10,8 +10,11 @@
     --color-blue-pale: hsla(228, 100%, 75%, 1);
     --color-red: hsla(0, 83%, 65%, 1);
     --color-gray: hsla(227, 14%, 52%, 1);
+    --color-gray-05: hsla(227, 14%, 52%, 0.5);
+
     --color-dark: hsla(228, 22%, 19%, 1);
     --color-dark-gray: hsla(227, 22%, 26%, 1);
+    --color-dark-gray-04: hsla(227, 22%, 26%, 0.4);
 
     --color-bg: hsla(0, 0%, 98%, 1);
 }
@@ -25,6 +28,10 @@
 *::after,
 *::before {
     box-sizing: border-box;
+}
+
+input {
+    font: inherit;
 }
 
 body {
