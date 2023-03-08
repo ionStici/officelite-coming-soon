@@ -21,6 +21,9 @@
     padding-bottom: 212px;
     overflow: hidden;
 
+    background-color: var(--color-bg);
+    animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
     @media only screen and (min-width: 768px) {
         overflow: revert;
         padding: 72px 40px 0 39px;
@@ -32,10 +35,8 @@
     @media only screen and (min-width: 1100px) {
         padding-top: 81px;
         margin-bottom: 126px;
+        background-color: revert;
     }
-
-    background-color: var(--color-bg);
-    animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .headerBgPattern {
@@ -66,17 +67,40 @@
     margin-top: -132px;
     background-color: var(--color-bg);
 
+    padding: 0 24px;
+
     @media only screen and (min-width: 768px) {
         margin-top: 0;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        text-align: left;
+        background-color: revert;
+
+        padding: 0 40px;
+        max-width: 1190px;
+        margin: 0 auto;
     }
 }
 
 // // // // // // // // // //
 
 .contentBox {
-    max-width: 548px;
-    padding: 0 24px;
+    max-width: 573px;
     margin: 0 auto 64px auto;
+
+    @media only screen and (min-width: 768px) {
+        margin-bottom: 104px;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        max-width: 540px;
+        margin: 0;
+    }
 }
 
 .h1 {
@@ -85,6 +109,15 @@
     font-size: 40px;
     line-height: 48px;
     margin-bottom: 16px;
+
+    @media only screen and (min-width: 768px) {
+        margin-bottom: 24px;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        font-size: 56px;
+        line-height: 64px;
+    }
 }
 
 .p {
@@ -93,6 +126,15 @@
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 64px;
+
+    @media only screen and (min-width: 768px) {
+        margin-bottom: 40px;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        font-size: 18px;
+        line-height: 28px;
+    }
 }
 
 .comingBox {
@@ -103,6 +145,10 @@
     line-height: 48px;
     letter-spacing: 5px;
     text-transform: uppercase;
+
+    @media only screen and (min-width: 768px) {
+        margin-bottom: 8px;
+    }
 }
 
 .comingText {
@@ -117,10 +163,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    max-width: 448px;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 768px) {
+        margin: 0;
+    }
 }
 
 .timeBox {
-    margin-right: 13px;
     background-color: var(--color-blue-01);
     border-radius: 4px;
 
@@ -129,6 +181,21 @@
 
     text-align: center;
     padding-top: 11px;
+
+    &:not(:last-child) {
+        margin-right: 13px;
+
+        @media only screen and (min-width: 768px) {
+            margin-right: 16px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        width: 100px;
+        height: 128px;
+        border-radius: 13px;
+        padding-top: 27.5px;
+    }
 }
 
 .time {
@@ -136,6 +203,11 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 48px;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 56px;
+        margin-bottom: 5px;
+    }
 }
 
 .type {
@@ -144,13 +216,17 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 20px;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 16px;
+        line-height: 28px;
+    }
 }
 
 // // // // // // // // // //
 
 .form {
-    max-width: 548px;
-    padding: 0 24px;
+    max-width: 445px;
     margin: 0 auto;
 
     background: var(--color-white);
@@ -160,18 +236,51 @@
 
     position: relative;
     z-index: 5;
+
+    // TEMP
+    background-color: #ddd;
+
+    @media only screen and (min-width: 768px) {
+        height: 508px;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        max-width: revert;
+        width: 445px;
+        margin: 0;
+    }
 }
 
 // // // // // // // // // //
 
 .blackBg {
+    width: 100vw;
     height: 320px;
 
     background-color: var(--color-dark);
     overflow: hidden;
     margin-top: -233px;
     position: relative;
+    left: -24px;
     z-index: 1;
+
+    @media only screen and (min-width: 768px) {
+        height: 380px;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        width: 420px;
+        height: 100vh;
+
+        left: revert;
+        margin-top: revert;
+
+        position: fixed;
+        right: 0;
+
+        top: -241px;
+        position: absolute;
+    }
 }
 
 .blackBgPattern {
@@ -181,6 +290,19 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: -474px;
+
+    @media only screen and (min-width: 768px) {
+        width: 1454px;
+        height: 1454px;
+        bottom: -537px;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        width: revert;
+        height: revert;
+        bottom: revert;
+        top: -781px;
+    }
 }
 
 // // // // // // // // // //
