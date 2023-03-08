@@ -15,20 +15,43 @@ import iconCross from './../assets/sign-up/icon-cross.svg';
 const Form = function (props) {
     return (
         <form className={styles.form}>
-            <div></div>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email Address" />
+
+            <div className={styles.select}>
+                <p>
+                    <span>Basic Pack </span>
+                    <span>Free</span>
+                </p>
+
+                <ul>
+                    <li>
+                        <span>Basic Pack </span>
+                        <span>Free</span>
+                    </li>
+
+                    <li>
+                        <span>Pro Pack </span>
+                        <span>$9.99</span>
+                    </li>
+
+                    <li>
+                        <span>Ultimate Pack </span>
+                        <span>$19.99</span>
+                    </li>
+                </ul>
+            </div>
+
+            <input type="tel" placeholder="Phone Number" />
+            <input type="text" placeholder="Company" />
+            <input
+                className={styles.btn}
+                type="submit"
+                value="Get on the list"
+            />
         </form>
     );
 };
-
-// Name
-// Email Address
-// Basic Pack Free
-// Basic Pack Free
-// Pro Pack $9.99
-// Ultimate Pack $19.99
-// Phone Number
-// Company
-// Get on the list
 
 // // // // // // // // // //
 
@@ -82,18 +105,20 @@ export const SignUp = function () {
                 />
             </header>
 
-            <main className={styles.main}>
-                <Timer />
-                <Form />
+            <div className={styles.wrapper}>
+                <main className={styles.main}>
+                    <Timer />
+                    <Form />
 
-                <div className={styles.blackBg}>
-                    <img
-                        className={styles.blackBgPattern}
-                        src={sideBgPattern}
-                        alt=""
-                    />
-                </div>
-            </main>
+                    <div className={styles.blackBg}>
+                        <img
+                            className={styles.blackBgPattern}
+                            src={sideBgPattern}
+                            alt=""
+                        />
+                    </div>
+                </main>
+            </div>
         </>
     );
 };

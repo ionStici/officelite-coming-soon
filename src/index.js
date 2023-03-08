@@ -13,6 +13,7 @@ import { Header } from './components/header';
 import { Pricing } from './components/pricing';
 import { Footer } from './components/footer';
 import { SignUp } from './components/signUp';
+import './store';
 
 // // // // // // // // // //
 
