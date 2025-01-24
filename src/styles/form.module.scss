@@ -1,211 +1,202 @@
-// // // // // // // // // //
-
 @keyframes slide-in-top {
-    0% {
-        transform: translateY(-1000px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-// // // // // // // // // //
-
 .form {
-    max-width: 445px;
-    margin: 0 auto;
-    padding: 30px 42px 0 43px;
+  max-width: 445px;
+  margin: 0 auto;
+  padding: 30px 42px 0 43px;
 
-    background: var(--color-white);
-    box-shadow: 0px 50px 50px -25px rgba(75, 92, 154, 0.247159);
-    border-radius: 13px;
-    height: 465px;
+  background: var(--color-white);
+  box-shadow: 0px 50px 50px -25px rgba(75, 92, 154, 0.247159);
+  border-radius: 13px;
+  height: 465px;
 
-    position: relative;
-    z-index: 5;
+  position: relative;
+  z-index: 5;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
-    @media only screen and (min-width: 768px) {
-        height: 508px;
-    }
+  @media only screen and (min-width: 768px) {
+    height: 508px;
+  }
 
-    @media only screen and (min-width: 1100px) {
-        max-width: revert;
-        width: 445px;
-        margin: 0;
-    }
+  @media only screen and (min-width: 1100px) {
+    max-width: revert;
+    width: 445px;
+    margin: 0;
+  }
 }
 
 .input {
-    height: 62px;
-    border: none;
-    border-bottom: 1px solid var(--color-gray-05);
-    padding-left: 16px;
-    padding-right: 16px;
+  height: 62px;
+  border: none;
+  border-bottom: 1px solid var(--color-gray-05);
+  padding-left: 16px;
+  padding-right: 16px;
 
-    color: var(--color-dark-gray);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
+  color: var(--color-dark-gray);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
 
-    &:focus {
-        outline: none;
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--color-gray-05);
+  }
+
+  &:not(:last-child) {
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 7px;
     }
-
-    &::placeholder {
-        color: var(--color-gray-05);
-    }
-
-    &:not(:last-child) {
-        @media only screen and (min-width: 768px) {
-            margin-bottom: 7px;
-        }
-    }
+  }
 }
 
 .select {
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    color: var(--color-dark-gray);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 28px;
+  color: var(--color-dark-gray);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    position: relative;
+  position: relative;
 
-    &Free {
-        color: var(--color-dark-gray-04);
-        margin-left: 8px;
-    }
+  &Free {
+    color: var(--color-dark-gray-04);
+    margin-left: 8px;
+  }
 }
 
 .btn {
-    margin-top: 40px;
-    background-color: var(--color-blue);
-    border: none;
-    border-radius: 50px;
-    height: 56px;
+  margin-top: 40px;
+  background-color: var(--color-blue);
+  border: none;
+  border-radius: 50px;
+  height: 56px;
 
-    color: var(--color-white);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 28px;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
 
-    cursor: pointer;
-    transition: background-color 0.1s, transform 0.1s;
+  cursor: pointer;
+  transition: background-color 0.1s, transform 0.1s;
 
-    &:hover {
-        background-color: var(--color-blue-pale);
-    }
+  &:hover {
+    background-color: var(--color-blue-pale);
+  }
 
-    &:active {
-        transform: scale(0.975);
-    }
+  &:active {
+    transform: scale(0.975);
+  }
 }
 
-// // // // // // // // // //
-
 .ul {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 70px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 70px;
 
-    list-style: none;
-    width: 367px;
-    height: 198px;
+  list-style: none;
+  width: 367px;
+  height: 198px;
 
-    background: #ffffff;
-    border: 1px solid rgba(51, 57, 80, 0.153273);
-    box-shadow: 0px 50px 50px -25px rgba(75, 92, 154, 0.747077);
-    border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(51, 57, 80, 0.153273);
+  box-shadow: 0px 50px 50px -25px rgba(75, 92, 154, 0.747077);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  li {
+    height: 30%;
+    padding: 0 32px;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
 
-    li {
-        height: 30%;
-        padding: 0 32px;
-
-        display: flex;
-        align-items: center;
-
-        &:not(:last-child) {
-            margin-bottom: 3px;
-        }
-
-        &:hover {
-            background-color: #eee;
-        }
+    &:not(:last-child) {
+      margin-bottom: 3px;
     }
 
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.15s ease-in-out;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
 }
 
 .iconCheck {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .iconArrow {
-    transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .iconCross {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 
-    position: absolute;
-    // right: 62px;
-    right: 54px;
+  position: absolute;
+  right: 54px;
 
-    &_name {
-        top: 52px;
-        display: none;
+  &_name {
+    top: 52px;
+    display: none;
 
-        @media only screen and (min-width: 768px) {
-        }
+    @media only screen and (min-width: 768px) {
     }
+  }
 
-    &_email {
-        top: 115px;
-        display: none;
+  &_email {
+    top: 115px;
+    display: none;
 
-        @media only screen and (min-width: 768px) {
-            top: 118px;
-        }
+    @media only screen and (min-width: 768px) {
+      top: 118px;
     }
+  }
 
-    &_tel {
-        top: 240px;
-        display: none;
+  &_tel {
+    top: 240px;
+    display: none;
 
-        @media only screen and (min-width: 768px) {
-            top: 255px;
-        }
+    @media only screen and (min-width: 768px) {
+      top: 255px;
     }
+  }
 
-    &_comp {
-        top: 300px;
-        display: none;
+  &_comp {
+    top: 300px;
+    display: none;
 
-        @media only screen and (min-width: 768px) {
-            top: 328px;
-        }
+    @media only screen and (min-width: 768px) {
+      top: 328px;
     }
+  }
 }
-
-//
